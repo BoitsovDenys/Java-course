@@ -22,11 +22,6 @@ public class Model {
         return  targetNumber;
     }
 
-    public void setPrimaryBonds(int lowerBound, int upperBound){
-        this.lowerBound = lowerBound;
-        this.upperBound = upperBound;
-    }
-
     public MatchingUserInputAndTargetValue checkAttemptFromUser(int attemptFromUser) {
         int response = Integer.compare(attemptFromUser, targetNumber);
         if (response == 0) {
@@ -44,6 +39,11 @@ public class Model {
 
     public boolean isBetweenBounds(int numberFromUser) {
         return (numberFromUser <= upperBound) && (numberFromUser >= lowerBound);
+    }
+
+    public void setPrimaryBonds(int lowerBound, int upperBound){
+        this.lowerBound = lowerBound;
+        this.upperBound = upperBound;
     }
 
     public List<Integer> getListOfAttempts() {

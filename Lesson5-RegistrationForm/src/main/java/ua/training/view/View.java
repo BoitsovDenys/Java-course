@@ -11,8 +11,8 @@ public class View {
     static String MESSAGES_BUNDLE_NAME = "messages";
 
     public static final ResourceBundle bundle = ResourceBundle.getBundle(MESSAGES_BUNDLE_NAME,
-                    new Locale("ua", "UA"));  // Ukrainian
-                    //new Locale("en"));        // English
+                    //new Locale("ua", "UA"));  // Ukrainian
+                    new Locale("en"));  // English
 
     /**
      * @param message to print
@@ -34,10 +34,6 @@ public class View {
                 bundle.getString(INPUT_STRING_DATA) +
                 bundle.getString(message));
     }
-
-
-
-
 
     public void printSubscriber(Subscriber subscriber) {
         System.out.println("Surname - " + subscriber.getFirstName() + ";" +

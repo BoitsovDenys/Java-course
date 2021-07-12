@@ -6,9 +6,6 @@ import ua.training.view.View;
 
 import java.util.Scanner;
 
-import static ua.training.controller.RegexContainer.*;
-import static ua.training.view.TextConstants.FIRST_NAME;
-import static ua.training.view.TextConstants.LOGIN_DATA;
 
 public class Controller {
 
@@ -25,18 +22,13 @@ public class Controller {
 
     // The Work method
     public void processUser() {
-        inputSubscriberToNotebook();
+        NotebookService notebookService = new NotebookService(scanner, view, notebook);
+        Subscriber subscriber = new Subscriber();
+        notebookService.inputSubscriberToNotebook(subscriber);
+
         view.printMessage(notebook.getSubscribersList().toString());
     }
 
     // The Utility methods
-    private void inputSubscriberToNotebook() {
-        UtilityController utilityController = new UtilityController(scanner, view);
-        String regexName = (String.valueOf(View.bundle.getLocale()).equals("ua")) ? REGEX_NAME_UKR : REGEX_NAME_LAT;
 
-        String firstName = utilityController.inputStringValueWithScanner(FIRST_NAME, regexName);
-        String login = utilityController.inputStringValueWithScanner(LOGIN_DATA, REGEX_LOGIN);
-
-        notebook.addSubscriber(new Subscriber(firstName, login));
-    }
 }

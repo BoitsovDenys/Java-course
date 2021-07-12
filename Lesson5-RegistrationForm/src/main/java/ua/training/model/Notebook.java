@@ -9,7 +9,7 @@ public class Notebook {
         return subscribersList;
     }
 
-    public void addSubscriber (Subscriber subscriber) {
+    public void addSubscriber(Subscriber subscriber) {
         subscribersList.add(subscriber);
     }
 }
